@@ -10,7 +10,7 @@ namespace ClassLibrarySorts
         /// <param name="M"></param>
         /// <param name="sortPlus"></param>
         /// <returns></returns>
-       public static void BubbleSort(int[]M,bool sortPlus)
+       public static int[] BubbleSort(int[]M,bool sortPlus)
         {
             if (sortPlus)   //Возрастание     
             {
@@ -49,10 +49,11 @@ namespace ClassLibrarySorts
 
                 
             }
+            return M;
             
         }
         //сортировка вставками по возрастанию. Среднее время O(n^2)
-        public static void InsertionSort(int[] M,bool SortPlus)
+        public static int[] InsertionSort(int[] M,bool SortPlus)
         {
             if (SortPlus)  //для возрастания
             {
@@ -96,11 +97,12 @@ namespace ClassLibrarySorts
                 }
                 
             }
+            return M;
         }    
         
         
         //Быстрая сортировка по
-        public static void quicksort(int[] M, bool SortPlus)
+        public static int[] quicksort(int[] M, bool SortPlus)
         {
                 int N = M.GetLength(0);
                 if (SortPlus)
@@ -113,6 +115,7 @@ namespace ClassLibrarySorts
                     QuickSortRangeRevers(M,0, N - 1);
                     
                 }
+            return M;
         }
         public static void QuickSortRangeRevers(int[]M,int Left, int Right)   //для убывания
         {
@@ -151,7 +154,7 @@ namespace ClassLibrarySorts
                 QuickSortRange(M,a, Right);
             
         }
-        public static void MergeSort (int[] M, bool SortPlus)
+        public static int[] MergeSort (int[] M, bool SortPlus)
         {
             int N = M.GetLength(0);
             if (SortPlus)
@@ -164,6 +167,7 @@ namespace ClassLibrarySorts
                 MergeSortRangeRevers(M,0, N - 1);
                 
             }
+            return M;
         }
         public static void MergeSortRangeRevers(int[]M,int Left, int Right)   //для убывания
         {
@@ -228,7 +232,7 @@ namespace ClassLibrarySorts
             }
             
         }
-        public static void HeapSort(int[]M,bool SortPlus)
+        public static int[] HeapSort(int[]M,bool SortPlus)
         {
             int N = M.GetLength(0);
             for (int i = N / 2 - 1; i >= 0; i--)
@@ -258,6 +262,7 @@ namespace ClassLibrarySorts
                 HeapSortRevers(M);
                 
             }
+            return M;
         }
         public static void Heapfy(int[]M,int N, int i)        //приведение к куче
         {
